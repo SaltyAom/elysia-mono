@@ -1,6 +1,9 @@
 const { resolve } = require('node:path')
-
-const project = resolve(process.cwd(), 'tsconfig.json')
+const { configs } = require('@eslint/js')
+const prettier = require('eslint-plugin-prettier/recommended')
+const prettierRecommended = require('eslint-plugin-prettier/recommended')
+const react = require('eslint-plugin-react')
+const globals = require('globals')
 
 /*
  * This is a custom ESLint configuration for use with
@@ -10,30 +13,53 @@ const project = resolve(process.cwd(), 'tsconfig.json')
 
 /** @type {import("eslint").Linter.Config} */
 module.exports = {
-    extends: ['eslint:recommended', 'prettier', 'turbo'],
-    plugins: ['only-warn'],
-    globals: {
-        React: true,
-        JSX: true
+    plugins: {
+        prettier
     },
-    env: {
-        browser: true
+    ...configs.recommended,
+    ...prettierRecommended,
+    plugins: {
+        prettier,
+        react
     },
-    settings: {
-        'import/resolver': {
-            typescript: {
-                project
+    languageOptions: {
+        parserOptions: {
+            ecmaFeatures: {
+                jsx: true
             }
+        },
+        globals: {
+            ...globals.browser
         }
     },
-    ignorePatterns: [
+    rules: {
+        'react/function-component-definition': 'off',
+        'react/jsx-filename-extension': [
+            'warn',
+            {
+                extensions: ['.jsx', '.tsx']
+            }
+        ],
+        'react/jsx-props-no-spreading': 'off',
+        'react/prop-types': 'off',
+        'react/react-in-jsx-scope': 'off',
+        'react/jsx-indent': 'off',
+        'react/jsx-indent-props': 'off',
+        'react/jsx-one-expression-per-line': 'off',
+        'react/jsx-closing-tag-location': 'off',
+        'react/destructuring-assignment': 'off',
+        'jsx-a11y/anchor-is-valid': 'off'
+    },
+    ignores: [
         // Ignore dotfiles
         '.*.js',
+        '.turbo',
         'node_modules/',
-        'dist/'
-    ],
-    overrides: [
-        // Force ESLint to detect .tsx files
-        { files: ['*.js?(x)', '*.ts?(x)'] }
+        'dist/',
+        'scripts/',
+        'eslint.config.js',
+        'postcss.config.js',
+        'tailwind.config.js',
+        'vitest.config.mts'
     ]
 }

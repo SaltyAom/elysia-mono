@@ -2,6 +2,7 @@
     "$schema": "https://json.schemastore.org/tsconfig",
     "display": "Default",
     "compilerOptions": {
+        "allowJs": true,
         "declaration": true,
         "declarationMap": true,
         "esModuleInterop": true,
@@ -39,7 +40,7 @@
             "@server": ["apps/server/src/index.ts"],
             "@server/*": ["apps/server/src/*"],
             "@libs": ["packages/libs/src/index.ts"],
-            "@libs/*": ["packages/libs/src/*"],
+            "@libs/*": ["packages/libs/src/*"]
         }
     }
 }

@@ -1,23 +1,26 @@
 {
-  "name": "libs",
-  "version": "0.0.0",
-  "private": true,
-  "scripts": {
-    "lint": "eslint . --max-warnings 0",
-    "generate:component": "turbo gen react-component"
-  },
-  "devDependencies": {
-    "config": "workspace:*",
-    "@types/node": "^20.11.24",
-    "@types/eslint": "^8.56.5",
-    "@types/react": "^18.2.61",
-    "eslint": "^8.57.0",
-    "typescript": "^5.5.2"
-  },
-  "dependencies": {
-    "elysia": "1.1.7",
-    "@elysiajs/eden": "1.1.2",
-    "react": "18.3.1",
-    "server": "workspace:*"
-  }
+    "name": "libs",
+    "version": "0.0.0",
+    "private": true,
+    "scripts": {
+        "lint": "eslint .",
+        "test": "vitest run",
+        "test:unit": "vitest run",
+        "test:watch": "vitest watch"
+    },
+    "devDependencies": {
+        "config": "workspace:*",
+        "@types/node": "^22.5.0",
+        "@types/eslint": "^9.6.0",
+        "@types/react": "^18.2.61",
+        "eslint": "^9.9.0",
+        "typescript": "^5.5.4",
+        "vitest": "^2.0.5"
+    },
+    "dependencies": {
+        "elysia": "1.1.7",
+        "@elysiajs/eden": "1.1.2",
+        "react": "18.3.1",
+        "server": "workspace:*"
+    }
 }

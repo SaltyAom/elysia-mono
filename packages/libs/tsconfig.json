@@ -1,8 +1,8 @@
 {
-  "extends": "config/typescript/base.json",
-  "compilerOptions": {
-    "outDir": "dist"
-  },
-  "include": ["src"],
-  "exclude": ["node_modules", "dist"]
+    "extends": "config/typescript/base.json",
+    "compilerOptions": {
+        "outDir": "dist"
+    },
+    "include": ["src", "eslint.config.js"],
+    "exclude": ["node_modules", "dist"]
 }

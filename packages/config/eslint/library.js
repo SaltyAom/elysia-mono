@@ -1,34 +1,37 @@
 const { resolve } = require('node:path')
-
-const project = resolve(process.cwd(), 'tsconfig.json')
+const { configs } = require('@eslint/js')
+const prettier = require('eslint-plugin-prettier/recommended')
+const prettierRecommended = require('eslint-plugin-prettier/recommended')
+const globals = require('globals')
 
 /** @type {import("eslint").Linter.Config} */
 module.exports = {
-    extends: ['eslint:recommended', 'prettier', 'turbo'],
-    plugins: ['only-warn'],
-    globals: {
-        React: true,
-        JSX: true
+    plugins: {
+        prettier
     },
-    env: {
-        node: true
-    },
-    settings: {
-        'import/resolver': {
-            typescript: {
-                project
+    ...configs.recommended,
+    ...prettierRecommended,
+    languageOptions: {
+        parserOptions: {
+            ecmaFeatures: {
+                jsx: true
             }
+        },
+        globals: {
+            ...globals.node
         }
     },
-    ignorePatterns: [
+
+    ignores: [
         // Ignore dotfiles
         '.*.js',
+        '.turbo',
         'node_modules/',
-        'dist/'
-    ],
-    overrides: [
-        {
-            files: ['*.js?(x)', '*.ts?(x)']
-        }
+        'dist/',
+        'scripts/',
+        'eslint.config.js',
+        'postcss.config.js',
+        'tailwind.config.js',
+        'vitest.config.mts'
     ]
 }

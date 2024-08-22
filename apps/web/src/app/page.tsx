@@ -33,7 +33,7 @@ export default function Home() {
     })
 
     function onSubmit(values: z.infer<typeof formSchema>) {
-    	console.log(values)
+        // console.log(values)
 
         api.index.get()
     }

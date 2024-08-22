@@ -1,33 +1,40 @@
 {
-  "name": "whitecup",
-  "private": true,
-  "scripts": {
-    "build": "turbo build",
-    "dev": "turbo dev",
-    "dev:server": "turbo dev --filter=server",
-    "dev:web": "turbo dev --filter=web",
-    "docker:server": "docker build -t elysia-mono-server -f ./apps/server/Dockerfile .",
-    "docker:web": "docker build -t elysia-mono-web -f ./apps/web/Dockerfile .",
-    "test": "turbo test",
-    "lint": "turbo lint",
-    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
-    "shadcn-ui": "cd packages/ui && bunx shadcn-ui",
-    "postshadcn-ui": "bun packages/ui/scripts/shadcn-ui.ts"
-  },
-  "devDependencies": {
-    "prettier": "^3.2.5",
-    "turbo": "^2.0.11",
-    "typescript": "^5.4.5"
-  },
-  "engines": {
-    "node": ">=22"
-  },
-  "packageManager": "bun@1.1.21",
-  "workspaces": [
-    "apps/*",
-    "packages/*"
-  ],
-  "volta": {
-    "node": "20.16.0"
-  }
+    "name": "whitecup",
+    "private": true,
+    "scripts": {
+        "build": "turbo build",
+        "dev": "turbo dev",
+        "dev:server": "turbo dev --filter=server",
+        "dev:web": "turbo dev --filter=web",
+        "docker:server": "docker build -t elysia-mono-server -f ./apps/server/Dockerfile .",
+        "docker:web": "docker build -t elysia-mono-web -f ./apps/web/Dockerfile .",
+        "test": "turbo test",
+        "test:unit": "turbo test:unit",
+        "test:watch": "turbo test:watch",
+        "lint": "turbo lint",
+        "format": "prettier --write \"**/*.{ts,tsx,md}\"",
+        "format:check": "prettier --check .",
+        "shadcn-ui": "cd packages/ui && bunx shadcn-ui",
+        "postshadcn-ui": "bun packages/ui/scripts/shadcn-ui.ts",
+        "prepare": "husky"
+    },
+    "devDependencies": {
+        "@commitlint/cli": "^19.4.0",
+        "@commitlint/config-conventional": "^19.2.2",
+        "husky": "^9.1.5",
+        "prettier": "^3.2.5",
+        "turbo": "^2.0.11",
+        "typescript": "^5.4.5"
+    },
+    "engines": {
+        "node": ">=22"
+    },
+    "packageManager": "bun@1.1.21",
+    "workspaces": [
+        "apps/*",
+        "packages/*"
+    ],
+    "volta": {
+        "node": "22.7.0"
+    }
 }
