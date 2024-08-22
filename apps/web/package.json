@@ -1,0 +1,51 @@
+{
+  "name": "web",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev --turbo",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "test": "bun run test:unit && bun run test:e2e",
+    "test:unit": "vitest run",
+    "test:e2e": "bun scripts/playwright.ts",
+    "test:e2e:run": "playwright test"
+  },
+  "dependencies": {
+    "@hookform/resolvers": "^3.9.0",
+    "framer-motion": "^11.3.21",
+    "libs": "workspace:*",
+    "next": "14.2.5",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
+    "react-hook-form": "^7.52.2",
+    "ui": "workspace:*",
+    "zod": "^3.23.8",
+    "zustand": "^4.5.4"
+  },
+  "devDependencies": {
+    "@next/bundle-analyzer": "^14.2.5",
+    "@playwright/test": "^1.46.0",
+    "@tailwindcss/forms": "^0.5.7",
+    "@testing-library/dom": "^10.4.0",
+    "@testing-library/react": "^16.0.0",
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "@vitejs/plugin-react": "^4.3.1",
+    "autoprefixer": "^10.4.20",
+    "config": "workspace:*",
+    "eslint": "^9.8.0",
+    "eslint-config-next": "14.2.5",
+    "jsdom": "^24.1.1",
+    "postcss": "^8.4.40",
+    "tailwindcss": "^3.4.7",
+    "tailwindcss-animate": "^1.0.7",
+    "typescript": "5.5.2",
+    "vitest": "^2.0.5"
+  },
+  "volta": {
+    "node": "22.5.1"
+  }
+}

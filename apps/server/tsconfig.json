@@ -1,0 +1,13 @@
+{
+    "extends": "config/typescript/base.json",
+    "include": ["src", "test"],
+    "compilerOptions": {
+        "noEmit": true,
+        "baseUrl": "",
+        "paths": {
+            "@server": ["src/index.ts"],
+            "@server/*": ["src/*"],
+        }
+    },
+    "exclude": ["node_modules", "dist"]
+}

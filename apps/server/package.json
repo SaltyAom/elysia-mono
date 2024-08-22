@@ -1,0 +1,19 @@
+{
+  "name": "server",
+  "version": "1.0.50",
+  "main": "src/index.ts",
+  "types": "src/index.ts",
+  "scripts": {
+    "test": "bun test",
+    "dev": "bun run --watch src/index.ts",
+    "build": "bun build --compile --minify-whitespace --minify-syntax ./src/index.ts --outfile server"
+  },
+  "dependencies": {
+    "@elysiajs/opentelemetry": "^1.1.2",
+    "@elysiajs/swagger": "^1.1.0",
+    "elysia": "1.1.7"
+  },
+  "devDependencies": {
+    "config": "workspace:*"
+  }
+}

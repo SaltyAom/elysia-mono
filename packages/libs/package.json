@@ -1,0 +1,23 @@
+{
+  "name": "libs",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "lint": "eslint . --max-warnings 0",
+    "generate:component": "turbo gen react-component"
+  },
+  "devDependencies": {
+    "config": "workspace:*",
+    "@types/node": "^20.11.24",
+    "@types/eslint": "^8.56.5",
+    "@types/react": "^18.2.61",
+    "eslint": "^8.57.0",
+    "typescript": "^5.5.2"
+  },
+  "dependencies": {
+    "elysia": "1.1.7",
+    "@elysiajs/eden": "1.1.2",
+    "react": "18.3.1",
+    "server": "workspace:*"
+  }
+}

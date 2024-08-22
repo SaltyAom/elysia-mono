@@ -1,0 +1,9 @@
+node_modules
+bun.lockb
+.DS_Store
+.turbo
+.gitignore
+
+build
+server
+app

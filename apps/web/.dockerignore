@@ -1,0 +1,6 @@
+.turbo
+.next
+.DS_Store
+.eslintrc.js
+.gitignore
+node_modules
