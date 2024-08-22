@@ -6,6 +6,7 @@
         "dev": "turbo dev",
         "dev:server": "turbo dev --filter=server",
         "dev:web": "turbo dev --filter=web",
+        "docker": "bun scripts/docker.ts",
         "docker:server": "docker build -t elysia-mono-server -f ./apps/server/Dockerfile .",
         "docker:web": "docker build -t elysia-mono-web -f ./apps/web/Dockerfile .",
         "test": "turbo test",

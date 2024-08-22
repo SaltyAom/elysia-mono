@@ -24,7 +24,7 @@ FROM gcr.io/distroless/base
 WORKDIR /app
 
 COPY --from=build /app/server server
-COPY --from=build /app/node_modules node_modules
+# COPY --from=build /app/node_modules node_modules
 # .env .env
 
 ENV NODE_ENV=production
