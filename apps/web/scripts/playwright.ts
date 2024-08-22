@@ -11,7 +11,7 @@ await Promise.all([
     (server = $`bun run start`),
     (async () => {
         await Bun.sleep(500)
-        await $`bun run test:e2e:run`
+        await $`playwright test`
 
         server.throws(false)
 
