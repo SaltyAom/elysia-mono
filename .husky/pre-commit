@@ -1,2 +1,3 @@
 prettier --check .
 bun run test:unit
+bun lint
